@@ -1,8 +1,9 @@
 // Javascript implementation of a recursive quickSort
-// General Use shuffled array of n size functionality.
-const arrayFunctions = require('./');
 
-let array = arrayFunctions.shuffle(arrayFunctions.randomArray(100000));
+const arrayFunctions = require('./../RandArrayMaker.js');
+const performance = require('performance-now');
+
+let array = arrayFunctions.shuffle(arrayFunctions.randomArray(10000000));
 
 // Quicksort implementation -- Recursive
 function quicksort(array){
@@ -31,8 +32,11 @@ function quicksort(array){
 
 }
 
+let start = performance();
 quicksort(array);
+let end = performance();
 
+console.log(`Quick sort of 10,000,000 random intergers took ${end-start}`);
 
-// My machines time estimate for 100,000,000 number array;
-//[Finished in 0.158s]
+// Quick sort of 10,000,000 random intergers took 30513.069239
+// [Finished in 31.635s]
