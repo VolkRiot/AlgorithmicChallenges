@@ -25,18 +25,17 @@ function quicksort(array){
     array[i] > pivot ? above.push(array[i]) : below.push(array[i]);
   }
 
-  let final = [];
-
   // Concat recursive calls to quicksort with smaller arrays and pivot.
-  return final.concat(quicksort(below), pivot, quicksort(above));
+  return [].concat(quicksort(below), pivot, quicksort(above));
 
 }
 
+// Performance benchmark
 let start = performance();
 quicksort(array);
 let end = performance();
 
-console.log(`Quick sort of 10,000,000 random intergers took ${end-start}`);
+console.log(`Quick sort of 10,000,000 random intergers took ${(end-start).toFixed(3)} seconds`);
 
-// Quick sort of 10,000,000 random intergers took 30513.069239
-// [Finished in 31.635s]
+// Quick sort of 10,000,000 random intergers took 16152.881 seconds
+// [Finished in 17.134s]
