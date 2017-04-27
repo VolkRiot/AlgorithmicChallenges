@@ -26,6 +26,6 @@ let start = performance();
 bubbleSort(array);
 let end = performance();
 
-console.log(`Bubble sort of 100,000 random intergers took ${(end - start).toFixed(3)}`);
+console.log(`Bubble sort of 100,000 random intergers took ${(end - start).toFixed(3)} milliseconds`);
 //Bubble sort of 100,000 random intergers took 37954.079
 //[Finished in 38.067s]

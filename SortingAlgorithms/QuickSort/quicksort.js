@@ -35,7 +35,7 @@ let start = performance();
 quicksort(array);
 let end = performance();
 
-console.log(`Quick sort of 10,000,000 random intergers took ${(end-start).toFixed(3)} seconds`);
+console.log(`Quick sort of 10,000,000 random intergers took ${(end-start).toFixed(3)} milliseconds`);
 
 // Quick sort of 10,000,000 random intergers took 16152.881 seconds
 // [Finished in 17.134s]
