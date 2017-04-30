@@ -1,12 +1,14 @@
 module.exports = {
-  randomArray,
+  returnArray,
   shuffle
 }
 
-function randomArray(num){
+function returnArray(num){
   let array = []
-  while (num != 0){
-    array.push(num--);
+  let i = 1;
+  while (!(i > num)){
+    array.push(i);
+    i++;
   }
   return array;
 }
