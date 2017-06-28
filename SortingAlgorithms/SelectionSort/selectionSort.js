@@ -1,3 +1,4 @@
+// Javascript implementation of a selection sort;
 const arrayFunctions = require('../../Helpers/RandArrayMaker.js');
 const performance = require('performance-now');
 const totalsize = 1000;
