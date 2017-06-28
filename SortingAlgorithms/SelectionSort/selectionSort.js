@@ -1,23 +1,31 @@
 const arrayFunctions = require('../../Helpers/RandArrayMaker.js');
 const performance = require('performance-now');
-const totalsize = 10000;
+const totalsize = 1000;
 
 let array = arrayFunctions.shuffle(arrayFunctions.returnArray(totalsize));
 
-function selectionSort(arr) {
-  let lowest = undefined;
-  let final = [];
+function swap(items, firstIndex, secondIndex) {
+  var temp = items[firstIndex];
+  items[firstIndex] = items[secondIndex];
+  items[secondIndex] = temp;
+}
 
+function selectionSort(arr) {
+  let lowestIndx = 0;
+  // Loop through our array
   for (let i = 0; i < arr.length - 1; i++) {
-    lowest = arr[i];
+    // Assign the first value to be the assumed lowerst to start.
+    lowestIndx = i;
+    // Loop throught the remaining array and select smallest value
     for (let x = i + 1; x < arr.length; x++) {
-      if (lowest > arr[x]) {
-        lowest = arr[x];
+      if (arr[lowestIndx] > arr[x]) {
+        lowestIndx = x;
       }
     }
-    final.push(lowest);
+    // Completion of one pass push the lowest value;
+    swap(arr, i, lowestIndx);
   }
-  return final;
+  return arr;
 }
 
 // Performance benchmark

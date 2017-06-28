@@ -39,5 +39,5 @@ console.log(
   )} milliseconds`
 );
 
-// Quick sort of 10,000,000 random intergers took 16152.881 seconds
+// Quick sort of 10,000,000 random intergers took 16152.881 milliseconds
 // [Finished in 17.134s]
