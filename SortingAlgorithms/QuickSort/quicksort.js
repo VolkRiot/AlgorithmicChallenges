@@ -1,15 +1,14 @@
 // Javascript implementation of a recursive quickSort
 const arrayFunctions = require('../../Helpers/RandArrayMaker.js');
 const performance = require('performance-now');
-let totalsize = 10000000;
+const totalsize = 10000000;
 
 let array = arrayFunctions.shuffle(arrayFunctions.returnArray(totalsize));
 
 // Quicksort implementation -- Recursive
-function quicksort(array){
-
+function quicksort(array) {
   // Condition to exit the recusion
-  if(array.length < 2){
+  if (array.length < 2) {
     return array;
   }
 
@@ -21,13 +20,12 @@ function quicksort(array){
   let above = [];
   let below = [];
 
-  for(let i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++) {
     array[i] > pivot ? above.push(array[i]) : below.push(array[i]);
   }
 
   // Concat recursive calls to quicksort with smaller arrays and pivot.
   return [].concat(quicksort(below), pivot, quicksort(above));
-
 }
 
 // Performance benchmark
@@ -35,7 +33,11 @@ let start = performance();
 quicksort(array);
 let end = performance();
 
-console.log(`Quick sort of ${totalsize} random intergers took ${(end-start).toFixed(3)} milliseconds`);
+console.log(
+  `Quick sort of ${totalsize} random intergers took ${(end - start).toFixed(
+    3
+  )} milliseconds`
+);
 
 // Quick sort of 10,000,000 random intergers took 16152.881 seconds
 // [Finished in 17.134s]
