@@ -3,9 +3,11 @@ module.exports = {
   shuffle
 };
 
-function returnArray(num, i = 1) {
+function returnArray(end, start = 1) {
   let array = [];
-  while (i <= num) {
+  let i = start;
+
+  while (i <= end) {
     array.push(i);
     i++;
   }
