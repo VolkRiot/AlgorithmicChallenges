@@ -7,4 +7,7 @@ describe("Number of letters in string", () => {
   it("Should return all letters regardless of case", () => {
     assert.equal(count_letters('eEeE')['e'], 4);
   });
+  it("Should return number of letters using either case in object", () => {
+    assert.equal(count_letters('AAaaA')['A'], 5);
+  });
 })

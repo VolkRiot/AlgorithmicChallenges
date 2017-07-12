@@ -20,11 +20,13 @@ function count_letters(string) {
 
   alphabet.split('').forEach(alpha => {
     count[alpha] = 0;
+    count[alpha.toUpperCase()] = 0;
   });
 
   lowerString.split('').forEach(letter => {
     if(/[a-z]/.test(letter)) {
       count[letter]++;
+      count[letter.toUpperCase()]++;
     }
   });
 
