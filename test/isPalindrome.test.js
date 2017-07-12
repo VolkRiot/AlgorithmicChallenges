@@ -13,6 +13,6 @@ describe("Palindrome checker", () => {
   });
 
   it('Should ignore non alpha chars', () => {
-    assert.equal(isPalindrome('Race!car?'), true);
+    assert.equal(isPalindrome('Race#%!car?'), true);
   });
 });

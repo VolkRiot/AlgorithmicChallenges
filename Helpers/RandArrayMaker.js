@@ -3,9 +3,8 @@ module.exports = {
   shuffle
 };
 
-function returnArray(num) {
+function returnArray(num, i = 1) {
   let array = [];
-  let i = 1;
   while (i <= num) {
     array.push(i);
     i++;
