@@ -6,11 +6,11 @@ number we can get by multiplying two of them. For example, for the array:
 
 ...We should get `42 * 100 = 4200`. */
 
-// Naive
+// Naive O(n^2)
 
 function largestMultiple(arr) {
-  if(!arr instanceof Array) {
-    return;
+  if(!(arr instanceof Array)) {
+    throw new Error("largestMultiple() only accepts array arguments");
   }
   let maxProduct = Number.NEGATIVE_INFINITY;
   arr.forEach((num, i) => {
@@ -24,13 +24,15 @@ function largestMultiple(arr) {
   return maxProduct;
 }
 
+// Smart O(n)
+
 function largestMultipleSmarter(arr) {
-  if(!arr instanceof Array) {
-    return;
+  if(!(arr instanceof Array)) {
+    throw new Error("largestMultipleSmarter() only accepts array arguments");
   }
 
   let largestPos;
-  let lrgIndx;
+  let lrgPosIndex;
   let secondPos;
 
   let largestNeg;
@@ -46,14 +48,14 @@ function largestMultipleSmarter(arr) {
 
       if (!largestPos) {
         largestPos = each;
-        lrgIndx = i;
+        lrgPosIndex = i;
 
       } else if (each > largestPos) {
           secondPos = largestPos;
           largestPos = each;
-          lrgIndx = i;
+          lrgPosIndex = i;
 
-      } else if ((!secondPos || each > secondPos) && i !== lrgIndx) {
+      } else if ((!secondPos || each > secondPos) && i !== lrgPosIndex) {
           secondPos = each;
       }
 

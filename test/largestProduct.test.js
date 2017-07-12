@@ -1,11 +1,10 @@
-const chai = require('chai');
+const {assert, expect} = require('chai');
 const {
   largestMultiple,
   largestMultipleSmarter
 } = require('../InterviewQuestion/largestProduct');
 const RandArrayMaker = require('../Helpers/RandArrayMaker');
 
-const assert = chai.assert;
 let array = [1, 3, 5, 10];
 let bigNegArray = RandArrayMaker.returnArray(0, -1000000);
 let lrgProduct = RandArrayMaker.shuffle(largestMultipleSmarter(bigNegArray));

@@ -15,4 +15,8 @@ describe("Palindrome checker", () => {
   it('Should ignore non alpha chars', () => {
     assert.equal(isPalindrome('Race#%!car?'), true);
   });
+
+  it('Should ignore spaces', () => {
+    assert.equal(isPalindrome('Race #%!c a r?'), true);
+  });
 });
