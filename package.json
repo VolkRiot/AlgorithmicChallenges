@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VolkRiot/AlgorithmicChallenges.git"
-  },
+  "repository": "git+https://github.com/VolkRiot/AlgorithmicChallenges.git",
   "keywords": [
     "algorithms",
     "interview",
@@ -22,6 +19,8 @@
   },
   "homepage": "https://github.com/VolkRiot/AlgorithmicChallenges#readme",
   "dependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
     "performance-now": "^2.1.0"
   }
 }

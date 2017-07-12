@@ -24,9 +24,6 @@ function largestMultiple(arr) {
   return maxProduct;
 }
 
-var answ = largestMultiple([-100, 2, 42, 100]);
-console.log(answ);
-
 function largestMultipleSmarter(arr) {
   if(!arr instanceof Array) {
     return;
@@ -95,9 +92,6 @@ function largestMultipleSmarter(arr) {
     return maxProductNeg;
   }
 
-
-
 }
 
-var answ = largestMultipleSmarter([-100, 2, 9, 42, -100]);
-console.log("Seond algo got", answ);
+module.exports = { largestMultiple, largestMultipleSmarter };
