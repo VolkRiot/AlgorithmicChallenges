@@ -28,10 +28,4 @@ function isPalindrome(string) {
 
 }
 
-let asnw1 = isPalindrome('raceCar') // true
-let asnw2 = isPalindrome('David is cool') // false
-let asnw3 = isPalindrome('Race!car?') // true
-
-console.log(asnw1)
-console.log(asnw2)
-console.log(asnw3)
+module.exports = isPalindrome;
