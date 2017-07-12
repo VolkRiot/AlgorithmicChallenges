@@ -31,6 +31,4 @@ function count_letters(string) {
   return count;
 }
 
-var letter_counts = count_letters("Example sentence");
-
-console.log(letter_counts['e']); // 5
+module.exports = count_letters;
