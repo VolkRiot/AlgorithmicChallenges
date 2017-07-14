@@ -18,6 +18,19 @@ For example:
 ```
 */
 
+function isPalindromeAlternate(string) {
+  let lowered = String(string).toLowerCase();
+
+  let filtered = lowered.split('')
+    .filter(char => /[a-z]/.test(char));
+
+  return filtered.every((element, i, array) => {
+      return element === array[array.length - 1 - i];
+    });
+
+}
+
+
 function isPalindrome(string) {
   let lowered = String(string).toLowerCase();
 
