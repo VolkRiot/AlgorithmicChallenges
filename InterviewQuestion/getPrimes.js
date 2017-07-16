@@ -35,4 +35,4 @@ function getPrimes(val) {
   return final;
 }
 
-console.log(getPrimes(31))
+module.exports = getPrimes;
