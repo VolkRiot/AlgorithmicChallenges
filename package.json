@@ -4,7 +4,8 @@
   "description": "Just a collection of various algorithms I can practice writing and playing with",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepush": "npm test"
   },
   "repository": "git+https://github.com/VolkRiot/AlgorithmicChallenges.git",
   "keywords": [
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/VolkRiot/AlgorithmicChallenges#readme",
   "dependencies": {
     "chai": "^4.1.0",
+    "husky": "^0.14.3",
     "mocha": "^3.4.2",
     "performance-now": "^2.1.0"
   }
