@@ -21,7 +21,7 @@ function isPrime(n) {
 }
 
 function getPrimes(val) {
-  let start = 1;
+  let start = 2;
   let final = [];
 
   while (start <= val) {

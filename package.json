@@ -4,7 +4,7 @@
   "description": "Just a collection of various algorithms I can practice writing and playing with",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": "git+https://github.com/VolkRiot/AlgorithmicChallenges.git",
   "keywords": [
