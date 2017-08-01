@@ -13,10 +13,11 @@ OR
 Pair found at index 1 and 4 (7 + 3) */
 
 var arr = [8, 7, 2, 5, 3, 1];
-var sum = 10
+var total = 10
 
 function findPair(array, sum){
 
+  var found = false;
   var map = {};
 
   for (var i = 0; i < array.length; i++){
@@ -31,6 +32,7 @@ function findPair(array, sum){
   while (lowest < highest){
 
     if((arr[lowest] + arr[highest]) == sum){
+        found = true;
         console.log("Pair found at index " + map[arr[lowest]] + " and " + map[arr[highest]] + " (" + arr[lowest] + " + " + arr[highest] + ")");
     }
 
@@ -42,6 +44,8 @@ function findPair(array, sum){
 
   }
 
+  if(!found) console.log("No pairs found...");
+
 }
 
-findPair(arr, 10);
+findPair(arr, total);
