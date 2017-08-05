@@ -5,7 +5,7 @@ f('AbrAcadAbRa', 'cAda') // 2  */
 // Naive -- Slow -- 1.522s completion :(
 
 function anagramDetector(text, letters) {
-  const final = [];
+  let final = 0;
 
   if (text.length < letters.length) {
     return final;
@@ -15,7 +15,7 @@ function anagramDetector(text, letters) {
     var slice = array.slice(i, i + letters.length);
 
     if (isAnagram(slice, letters)) {
-      final.push(slice.join(''));
+      final++;
     }
   });
 
@@ -29,4 +29,4 @@ function isAnagram(sub, testStr) {
   return sortedTest === sortedSub;
 }
 
-console.log(anagramDetector('AdnBndAndBdaBn', 'dAn'));
+module.exports = anagramDetector;
