@@ -42,3 +42,5 @@ function balancedBrackets(string) {
 
   return true;
 }
+
+module.exports = balancedBrackets;
