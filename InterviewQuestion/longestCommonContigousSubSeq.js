@@ -31,31 +31,7 @@ Sample output:
      None
   */
 
-var user0 = [
-  '/nine.html',
-  '/four.html',
-  '/six.html',
-  '/seven.html',
-  '/one.html'
-];
-var user1 = [
-  '/one.html',
-  '/two.html',
-  '/three.html',
-  '/four.html',
-  '/six.html'
-];
-var user2 = [
-  '/nine.html',
-  '/two.html',
-  '/three.html',
-  '/four.html',
-  '/six.html',
-  '/seven.html'
-];
-var user3 = ['/three.html', '/eight.html'];
-
-function longestMatching(usr1, usr2) {
+function longestMatchingCont(usr1, usr2) {
   longestSeq = 0;
   final = [];
 
@@ -64,38 +40,60 @@ function longestMatching(usr1, usr2) {
     return acc;
   }, {});
 
-  for (let i = 0; i < usr2.length; i++) {
+  let newSeq = [];
+
+  for (let i = 0; i < usr2.length - 1; i++) {
     let elm = usr2[i];
 
     if (Usr1Map.hasOwnProperty(elm)) {
-      let currSeq = 1;
       let next = Usr1Map[elm];
-      let newSeq = [elm];
 
-      for (let x = i + 1; x < usr2.length; x++) {
-        if (next === usr2[x]) {
-          currSeq++;
-          next = Usr1Map[next];
-          newSeq.push(usr2[x]);
-        } else {
-          i = x + 1;
-          break;
-        }
+      if (newSeq.length === 0) {
+        newSeq.push(usr2[i]);
       }
-      // longestSeq = Math.max(currSeq, longestSeq);
-      final =
-        Math.max(final.length, newSeq.length) === newSeq.length
-          ? newSeq
-          : final;
+
+      if (next === usr2[i + 1]) {
+        next = Usr1Map[next];
+        newSeq.push(usr2[i + 1]);
+      } else {
+        final =
+          Math.max(final.length, newSeq.length) === newSeq.length
+            ? newSeq
+            : final;
+        newSeq = [];
+      }
+
+      // Alternative Core algo -- rewritten to show cleaner liner time progress
+
+      // for (let x = i + 1; x < usr2.length; x++) {
+      //   if (next === usr2[x]) {
+      //     currSeq++;
+      //     next = Usr1Map[next];
+      //     newSeq.push(usr2[x]);
+      //   } else {
+      //     i = x;
+      //     break;
+      //   }
+      // }
+      // final =
+      //   Math.max(final.length, newSeq.length) === newSeq.length
+      //     ? newSeq
+      //     : final;
     }
   }
 
   return final.length > 1 ? final : 'None';
 }
 
-let answer = longestMatching(user0, user2);
-let answer2 = longestMatching(user1, user2);
-let answer3 = longestMatching(user1, user3);
-console.log(answer);
-console.log(answer2);
-console.log(answer3);
+module.exports = longestMatchingCont;
+
+// console.time('longestMatching');
+// let answer = longestMatching(user0, user2);
+// console.timeEnd('longestMatching');
+// console.time('longestMatching2');
+// let answer2 = longestMatching(user1, user2);
+// console.timeEnd('longestMatching2');
+// let answer3 = longestMatching(user1, user3);
+// console.log(answer);
+// console.log(answer2);
+// console.log(answer3);
