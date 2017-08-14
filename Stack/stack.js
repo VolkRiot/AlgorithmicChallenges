@@ -1,10 +1,17 @@
-function Stack() {
+function Stack(max) {
   let stack = {};
-  let size = 0
+  let size = 0;
   let minStack = [];
-  let min = Number.POSITIVE_INFINITY
+  let min = Number.POSITIVE_INFINITY;
+  let capacity = max;
 
-  const push = (value) => {
+  const push = value => {
+    if (size === capacity) {
+      console.log(
+        'Max capacity already reached. Remove element before adding a new one.'
+      );
+      return;
+    }
 
     if (minStack.length === 0 || Math.min(value, min) === value) {
       minStack.push(value);
@@ -12,7 +19,7 @@ function Stack() {
     }
     stack[size] = value;
     size++;
-  }
+  };
 
   const pop = () => {
     const valCopy = stack[size - 1];
@@ -24,19 +31,19 @@ function Stack() {
       min = minStack[minStack.length - 1];
     }
     return valCopy;
-  }
+  };
 
   const peek = () => {
     return stack[size - 1];
-  }
+  };
 
   const count = () => {
     return size;
-  }
+  };
 
   const getMin = () => {
     return minStack[minStack.length - 1];
-  }
+  };
 
   return {
     push,
@@ -44,23 +51,21 @@ function Stack() {
     peek,
     count,
     getMin
-  }
-
+  };
 }
 
-var myStack = Stack();
+var myStack = Stack(3);
 
 myStack.push(12);
 myStack.push(2);
 myStack.push(3);
 myStack.push(1);
 
-console.log(`Count is at ${myStack.count()}`)
-console.log(`Min value is currently ${myStack.getMin()}`)
-console.log(myStack.peek())
-
+console.log(`Count is at ${myStack.count()}`);
+console.log(`Min value is currently ${myStack.getMin()}`);
+console.log(myStack.peek());
 
 myStack.pop();
 
-console.log(`Min value is currently ${myStack.getMin()}`)
-console.log(myStack.peek())
+console.log(`Min value is currently ${myStack.getMin()}`);
+console.log(myStack.peek());
