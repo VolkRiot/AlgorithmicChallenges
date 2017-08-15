@@ -1,9 +1,9 @@
-function Stack(max) {
+module.exports = function Stack(max) {
   let stack = {};
   let size = 0;
   let minStack = [];
   let min = Number.POSITIVE_INFINITY;
-  let capacity = max;
+  let capacity = max ? max : Number.POSITIVE_INFINITY;
 
   const push = value => {
     if (size === capacity) {
@@ -52,20 +52,20 @@ function Stack(max) {
     count,
     getMin
   };
-}
+};
 
-var myStack = Stack(3);
-
-myStack.push(12);
-myStack.push(2);
-myStack.push(3);
-myStack.push(1);
-
-console.log(`Count is at ${myStack.count()}`);
-console.log(`Min value is currently ${myStack.getMin()}`);
-console.log(myStack.peek());
-
-myStack.pop();
-
-console.log(`Min value is currently ${myStack.getMin()}`);
-console.log(myStack.peek());
+// var myStack = Stack(3);
+//
+// myStack.push(12);
+// myStack.push(2);
+// myStack.push(3);
+// myStack.push(1);
+//
+// console.log(`Count is at ${myStack.count()}`);
+// console.log(`Min value is currently ${myStack.getMin()}`);
+// console.log(myStack.peek());
+//
+// myStack.pop();
+//
+// console.log(`Min value is currently ${myStack.getMin()}`);
+// console.log(myStack.peek());
