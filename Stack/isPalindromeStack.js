@@ -1,7 +1,7 @@
 const Stack = require('./stack');
 
 function isPalindrome(str) {
-  var stack = new Stack();
+  var stack = Stack();
   var reversed = '';
 
   str = str.toLowerCase();
