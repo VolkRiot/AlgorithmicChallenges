@@ -41,14 +41,27 @@ function generateLongString(size) {
   return final;
 }
 
-// console.log(generateLongString(1000));
+function reverse(string) {
+  var first = null;
+  var last = null;
+  var tmp = null;
+  var array = string.split('')
+  var length = array.length;
+
+  for (first = 0, last = length - 1; first < length / 2; first++, last--) {
+    tmp = array[first];
+    array[first] = array[last];
+    array[last] = tmp;
+  }
+
+  return array.join('')
+
+}
 
 let long = generateLongString(10000000);
 
 let start = performance();
-
 reverseString(long);
-
 let end = performance();
 
 console.log(
@@ -56,7 +69,7 @@ console.log(
 );
 
 let begin = performance();
-reverseHalf(long);
+reverse(long);
 let finish = performance();
 
-console.log(`Performance of half-string recorded as ${end - start.toFixed(3)}`)
+console.log(`Performance of half-string recorded as ${(finish - start).toFixed(3)}`)

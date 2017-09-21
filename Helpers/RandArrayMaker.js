@@ -1,6 +1,7 @@
 module.exports = {
   returnArray,
-  shuffle
+  shuffle,
+  shuffledArr
 };
 
 function returnArray(end, start = 1) {
@@ -22,4 +23,8 @@ function shuffle(array) {
     array[i] = temp;
   }
   return array;
+}
+
+function shuffledArr(size) {
+  return shuffle(returnArray(size));
 }
