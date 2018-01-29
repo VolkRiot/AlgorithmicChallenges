@@ -114,6 +114,6 @@ function lcmIter(arr,len){
 var array = generateDeck(105);
 //call your iterator with the array and its length
 
-console.log(howManyShuffles(array, 24));
+console.log('Shuffles needed:', howManyShuffles(array, 24));
 
 // console.log("Call to doSomething took " + (end - start) + " milliseconds.")
