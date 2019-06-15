@@ -1,16 +1,16 @@
 // Standard input for Node.js launches
-const readline = require('readline');
+// const readline = require('readline');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
-rl.question("What is the integer you want converted to English text in dollars?  ", function(number) {
-   const numberInEnglish = intToDollar(number);
-   console.log(numberInEnglish);
-   rl.close();
-});
+// rl.question("What is the integer you want converted to English text in dollars?  ", function(number) {
+//    const numberInEnglish = intToDollar(number);
+//    console.log(numberInEnglish);
+//    rl.close();
+// });
 
 function intToDollar(totalDollars) {
   let outputString = '';
@@ -105,10 +105,4 @@ function intToDollar(totalDollars) {
   return outputString;
 }
 
-// Debugging
-// intToDollar(3);
-// intToDollar(10);
-// intToDollar(21);
-// intToDollar(466);
-// intToDollar(1234);
-// intToDollar(4234570798);
+module.exports = intToDollar;
