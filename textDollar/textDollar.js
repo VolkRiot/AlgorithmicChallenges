@@ -35,7 +35,7 @@ function intToDollar(totalDollars) {
     '12': 'Twelve',
     '13': 'Thirteen',
     '14': 'Fourteen',
-    '15': 'Fifthteen',
+    '15': 'Fifteen',
     '16': 'Sixteen',
     '17': 'Seventeen',
     '18': 'Eighteen',
