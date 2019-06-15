@@ -10,6 +10,7 @@ describe('Convert interger values to English string dollars', () => {
     assert.equal(intToText(21), 'TwentyOneDollars');
     assert.equal(intToText(466), 'FourHundredSixtySixDollars');
     assert.equal(intToText(1234), 'OneThousandTwoHundredThirtyFourDollars');
+    assert.equal(intToText(4000000), 'FourMillionDollars');
     assert.equal(intToText(4234570798), 'FourBillionTwoHundredThirtyFourMillionFiveHundredSeventyThousandSevenHundredNinetyEightDollars');
   });
 })

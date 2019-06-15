@@ -97,7 +97,7 @@ function intToDollar(totalDollars) {
           : ones[hundredsValue];
     }
 
-    outputString += factors[sets.length - 1 - i];
+    if (parseInt(hundredsValue)) outputString += factors[sets.length - 1 - i];
   }
 
   outputString += 'Dollars';
