@@ -17,4 +17,12 @@ describe('Anagram Detection', () => {
   it('should add decimals', () => {
     expect(addTwoStrings('55255.5', '50125.4536700000')).to.equal(String(55255.5 + 50125.4536700000));
   });
+
+  it('should add decimals', () => {
+    expect(addTwoStrings('55255.004350', '50125')).to.equal(String(55255.004350 + 50125));
+  });
+
+  it('should add decimals', () => {
+    expect(addTwoStrings('0.004350', '50125')).to.equal(String(0.004350 + 50125));
+  });
 });
