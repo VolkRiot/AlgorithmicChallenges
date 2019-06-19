@@ -25,7 +25,7 @@ function allOccurances(string, subStr, replacement) {
 
       if (found) {
         string = string.substr(0, startIndex) + replacement + string.substr(startIndex + subStr.length);
-        i += Math.abs(string.length - originalLength);        
+        i += string.length - originalLength;        
       }
 
     }
@@ -46,5 +46,5 @@ function allOccurancesWholeWord(string, subStr, replacement) {
 
 }
 
-console.log(allOccurances("This is an example which is a test", 'is', 'bacon'));
+console.log(allOccurances("This is an example which is a test", 'example', 'short'));
 console.log(allOccurancesWholeWord("This is an example which is a test", 'is', 'bacon'));
