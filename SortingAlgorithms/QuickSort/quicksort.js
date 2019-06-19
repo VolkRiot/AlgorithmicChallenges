@@ -25,7 +25,7 @@ function quicksort(array) {
   }
 
   // Concat recursive calls to quicksort with smaller arrays and pivot.
-  return [].concat(quicksort(below), pivot, quicksort(above));
+  return [...quicksort(below), pivot, ...quicksort(above)];
 }
 
 // Performance benchmark
