@@ -57,5 +57,7 @@ function allOccurancesWholeWord(string, subStr, replacement) {
 
 }
 
-console.log(allOccurances("This is an example which is a test", ' ', 'XXXXX', false));
-console.log(allOccurancesWholeWord("This is an example which is a test", 'is', 'bacon'));
+// console.log(allOccurances("This is an example which is a test", ' ', 'XXXXX', false));
+// console.log(allOccurancesWholeWord("This is an example which is a test", 'is', 'bacon'));
+
+module.exports = allOccurances;
