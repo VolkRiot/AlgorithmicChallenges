@@ -2,7 +2,7 @@
 with another string (e.g. given: “This is an example which is a test”; find all occurrences 
 of “is” and replace with “could be”; result “This could be an example which could be a test”) */
 
-function allOccurances(string, subStr, replacement) {
+function allOccurances(string, subStr, replacement, wholeWords = false) {
   let finalString = '';
   let originalLength = string.length;
 
@@ -13,6 +13,15 @@ function allOccurances(string, subStr, replacement) {
     if (character === subStr[0]) {
       let startIndex = i;
       let found = true;
+
+      if (wholeWords) {
+        let preceding = i === 0 || string[i - 1] === ' ';
+        let following = i === string.length - 1 || string[i + subStr.length] === ' '
+
+        if (!preceding || !following) {
+          continue;
+        }
+      }
 
       for (let j = 0; j < subStr.length; j++) {
         if (subStr[j] === string[i]) {
@@ -46,5 +55,5 @@ function allOccurancesWholeWord(string, subStr, replacement) {
 
 }
 
-console.log(allOccurances("This is an example which is a test", 'example', 'short'));
+console.log(allOccurances("This is an example which is a test", 'is', 'NEW', true));
 console.log(allOccurancesWholeWord("This is an example which is a test", 'is', 'bacon'));
