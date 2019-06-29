@@ -1,4 +1,4 @@
-const allOccurances =  require('../TeksystemsChallenges/allOccurancesString.js');
+const allOccurances =  require('../CompanyChallenges/TeksystemsChallenges/allOccurancesString.js');
 const expect = require('chai').expect;
 
 describe('Replace all occurances', () => {
