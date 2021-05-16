@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/VolkRiot/AlgorithmicChallenges#readme",
   "dependencies": {
-    "chai": "^4.1.0",
+    "chai": "^4.3.4",
     "husky": "^0.14.3",
-    "mocha": "^3.4.2",
+    "mocha": "^8.4.0",
     "performance-now": "^2.1.0",
     "semver": "^5.4.1"
   }
