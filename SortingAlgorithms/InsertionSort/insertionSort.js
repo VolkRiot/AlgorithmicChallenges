@@ -1,30 +1,20 @@
 // Javascript implementation of an insertion sort;
 const arrayFunctions = require('../../Helpers/RandArrayMaker.js');
 const performance = require('performance-now');
-const totalsize = 1000;
+const totalsize = 1000000;
 
 let array = arrayFunctions.shuffle(arrayFunctions.returnArray(totalsize));
 
 function insertionSort(arr) {
-  let final = [];
-  arr.forEach(item => {
-    let indx = 0;
+  for (let index = 0; index < arr.length; index++) {
+    let j = index;
 
-    while (true) {
-      if (indx > final.length - 1) {
-        final.push(item);
-        break;
-      }
-
-      if (final[indx] > item) {
-        final.splice(indx, 0, item);
-        break;
-      }
-
-      indx++;
+    while (j > 0 && arr[j - 1] > arr[j]) {
+      [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+      j--;
     }
-  });
-  return final;
+  }
+  return arr;
 }
 
 let start = performance();
