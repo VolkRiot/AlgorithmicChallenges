@@ -17,7 +17,7 @@ function deepClone(value) {
 }
 
 const result = deepClone({
-  one: ['1', 12, { name: 'Misha', last: ['Metrikin', null] }],
+  one: ['1', 12, { name: 'Misha', last: ['Metrikin', null, { human: true }] }],
   two: undefined,
   three: {
     extra: undefined,
@@ -27,3 +27,5 @@ const result = deepClone({
     },
   },
 });
+
+console.log('Result', JSON.stringify(result, null, 2));

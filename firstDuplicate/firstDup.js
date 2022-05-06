@@ -9,7 +9,7 @@ function firstDuplicate(a) {
 
     // If value at derived position is negative then the value is a duplicate.
     if (a[pos] < 0) {
-      return Math.abs(a[i]);
+      return a[i] < 0 ? a[i] * -1 : a[i];
     }
 
     // Turn the value at the index to negative to denote visiting the node.
@@ -19,3 +19,6 @@ function firstDuplicate(a) {
   // Default for no duplicate found.
   return -1;
 }
+
+const test = [1, 2, 3, 4, 2];
+console.log(`Answers for ${test}:`, firstDuplicate(test));
